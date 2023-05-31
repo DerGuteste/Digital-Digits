@@ -2,13 +2,10 @@
 {
     internal class Program
     {
-        static int dx = 4;
-        static int dy = 3;
-
         /// <summary>
         /// 1: | 2: _ 3: ‾
         /// </summary>
-        static short[][,] digits = new short[10][,]
+        static short[][,] digits = new short[][,]
         {
             new short[4, 3] //0
             {
@@ -79,6 +76,16 @@
                 {1, 2, 1},
                 {0, 0, 1},
                 {0, 0, 0}
+            },
+            new short[,] // stick man
+            {
+                {0, 0, 2, 0, 0 },
+                {0, 1, 0, 1, 0 },
+                {0, 0, 3, 0, 1 },
+                {3, 3, 1, 3, 0 },
+                {0, 0, 1, 0, 0 },
+                {0, 1, 0, 1, 0 },
+                {0, 1, 0, 1, 0 },
             }
         };
 
@@ -165,7 +172,36 @@
 
                 Console.CursorLeft = 0;
             }
-            
+
+            #region stick man
+
+            //while (true)
+            //{
+            //    printDigit(digits[10]);
+
+            //    Console.CursorLeft = 0;
+
+                  #region rotate
+
+            //    keyinfo = Console.ReadKey();
+
+            //    if (keyinfo.Key == ConsoleKey.X)
+            //    {
+            //        digits[10] = dRotX(digits[10]);
+            //    }
+            //    else if (keyinfo.Key == ConsoleKey.Y)
+            //    {
+            //        digits[10] = dRotY(digits[10]);
+
+            //    }
+
+                  #endregion
+
+            //    Console.CursorLeft = 0;
+            //}
+
+            #endregion
+
         }
 
         /// <summary>
@@ -175,13 +211,16 @@
         /// <returns></returns>
         static short[,] dRotY(short[,] digit)
         {
-            short[,] output = new short[dx, dy];
+            int x = digit.GetLength(0);
+            int y = digit.GetLength(1);
 
-            for(int i = 0; i < dx; i++)
+            short[,] output = new short[x, y];
+
+            for (int i = 0; i < x; i++)
             {
-                for (int j = 0; j < dy; j ++)
+                for (int j = 0; j < y; j ++)
                 {
-                    output[i, j] = digit[i, dy - j - 1];
+                    output[i, j] = digit[i, y - j - 1];
                 }
             }
 
@@ -195,13 +234,16 @@
         /// <returns></returns>
         static short[,] dRotX(short[,] digit)
         {
-            short[,] output = new short[dx, dy];
+            int x = digit.GetLength(0);
+            int y = digit.GetLength(1);
 
-            for (int i = 0; i < dx; i++)
+            short[,] output = new short[x, y];
+
+            for (int i = 0; i < x; i++)
             {
-                for (int j = 0; j < dy; j++)
+                for (int j = 0; j < y; j++)
                 {
-                    output[i, j] = digit[dx - i - 1, j];
+                    output[i, j] = digit[x - i - 1, j];
                     if (output[i, j] == 2)
                     {
                         output[i, j] = 3;
@@ -242,12 +284,15 @@
             int posX = Console.CursorLeft;
             int posY = Console.CursorTop;
 
-            for(int i = 0; i < dx; i++)
+            int x = digit.GetLength(0);
+            int y = digit.GetLength(1);
+
+            for(int i = 0; i < x; i++)
             {
                 Console.CursorTop = posY + i;
                 Console.CursorLeft = posX;
 
-                for (int j = 0; j < dy; j++)
+                for (int j = 0; j < y; j++)
                 {
                     switch (digit[i, j])
                     {
