@@ -74,7 +74,7 @@
                 "  |",
                 "   "
             },
-            new string[7] //2
+            new string[7] //stick man
             {
                 "  _  ",
                 " | | ",
