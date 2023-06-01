@@ -2,9 +2,6 @@
 {
     internal class Program
     {
-        /// <summary>
-        /// 1: | 2: _ 3: ‾
-        /// </summary>
         static string[][] digits = new string[][]
         {
             new string[4] //0
@@ -102,6 +99,7 @@
             while (true)
             {
                 Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Enter input:");
 
                 input = Console.ReadLine();
 
