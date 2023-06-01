@@ -250,7 +250,7 @@
         }
 
         /// <summary>
-        /// mirrors a string
+        /// rotates a string[] 180° around the X-Axis
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -279,7 +279,7 @@
         }
 
         /// <summary>
-        /// mirrors a string
+        /// rotates a string[] 180° around the Y-Axis
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
@@ -296,7 +296,7 @@
         }
 
         /// <summary>
-        /// mirrors a string
+        /// mirrors a string (rotates it 180° around the Y-Axis)
         /// </summary>
         /// <param name="str"></param>
         /// <returns></returns>
