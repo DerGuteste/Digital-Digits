@@ -313,7 +313,7 @@
         }
 
         /// <summary>
-        /// print a digit in "digital clock style"
+        /// print a string[] 
         /// </summary>
         /// <param name="digit"></param>
         static void printDigit(string[] digit)
